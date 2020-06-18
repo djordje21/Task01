@@ -8,7 +8,6 @@ class Pasta
     @vege = vege
 puts "Prepairing your #{type} pasta, please wait for #{time} seconds."
 
-
   def vege
 vege = false
   until vege
@@ -36,13 +35,47 @@ end
   end
       puts "Your pasta #{type} with #{vege}  is ready to be served for #{portion} people ."
    end
+
+
+class Penne < Pasta
+
+def initialize(type, portion, time, vege)
+  super(type, portion, time, vege)
 end
 
-  penne = Pasta.new("Penne", 4, 6, "")
-  puts penne.cook
+  def cook
+    super
+     puts ""
+  end
+end
 
-  spagheti = Pasta.new("Spagheti", 3, 7, "")
-  puts spagheti.cook
+class Spagheti < Pasta
 
-  fussili = Pasta.new("Fussili", 3, 5, "")
-  puts fussili.cook
+def initialize(type, portion, time, vege)
+  super(type, portion, time, vege)
+end
+
+  def cook
+    super
+  end
+end
+
+class Fussili < Pasta
+
+def initialize(type, portion, time, vege)
+  super(type, portion, time, vege)
+end
+
+  def cook
+    super
+  end
+end
+
+penne = Penne.new("Penne", 3, 5, "")
+p penne.cook
+
+spagheti = Spagheti.new("Spagheti", 4, 7, "")
+p spagheti.cook
+
+fussili = Fussili.new("Fussili", 5, 8, "")
+p fussili.cook
